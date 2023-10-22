@@ -29,7 +29,7 @@ const postMessageChatPDF = async (newConsult) => {
       res = response.data.content;
     })
     .catch((error) => {
-      res = error.message;
+      res = [error.message, error.response.data];
     });
   return res;
 };
@@ -50,15 +50,16 @@ const uploadPDF = async () => {
   var res;
   await axios
     .post("https://api.chatpdf.com/v1/sources/add-file", formData, options)
-    .then(async (response) => {
+    .then((response) => {
       const info = {
         nombre: "sample",
         id: response.data.sourceId,
       };
+      pdfInfo.saveInfoPDF(info);
       res = response.data.sourceId;
     })
     .catch((error) => {
-      res = error.message;
+      res = [error.message, error.response.data];
     });
   return res;
 };
