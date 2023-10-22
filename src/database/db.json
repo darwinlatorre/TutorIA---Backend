@@ -1,8 +1,12 @@
 {
   "chatPDFs": [
     {
+      "nombre": "article",
+      "id": "src_2rCxBUeGMwqAiONqF2nQj"
+    },
+    {
       "nombre": "sample",
-      "id": "src_CTw0AjMcfG26bHfkVsa3z"
+      "id": "src_Hqs6mTklW1ETInuNoOjhX"
     }
   ]
 }

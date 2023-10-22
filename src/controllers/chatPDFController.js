@@ -3,7 +3,7 @@ const chatPDFService = require("../services/chatPDFService");
 const postMessageChatPDF = async (req, res) => {
   const { body } = req;
 
-  if (!body.message || !body.widget) {
+  if (!body.filename || !body.message || !body.widget) {
     return res.status(400).send({
       status: "FAILED",
       data: {
@@ -14,6 +14,7 @@ const postMessageChatPDF = async (req, res) => {
   }
 
   const newConsult = {
+    filename: body.filename,
     message: body.message,
     widget: body.widget,
   };

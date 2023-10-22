@@ -12,7 +12,7 @@ const postMessageChatPDF = async (newConsult) => {
   };
 
   const data = {
-    sourceId: pdfInfo.findByName(process.env.PDF),
+    sourceId: pdfInfo.findByName(newConsult.filename),
     messages: [
       {
         role: "user",
