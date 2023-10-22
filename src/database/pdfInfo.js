@@ -2,7 +2,8 @@ const DB = require("./db.json");
 const { saveToDB } = require("./util");
 
 const saveInfoPDF = (pdfInfo) => {
-  saveToDB(DB.chatPDFs.push(pdfInfo));
+  DB.chatPDFs.push(pdfInfo);
+  saveToDB(DB);
 };
 
 const findByName = (fileName) => {
