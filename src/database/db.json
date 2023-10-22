@@ -1,3 +1,8 @@
 {
-  "chatPDFs": []
+  "chatPDFs": [
+    {
+      "nombre": "sample",
+      "id": "src_CTw0AjMcfG26bHfkVsa3z"
+    }
+  ]
 }

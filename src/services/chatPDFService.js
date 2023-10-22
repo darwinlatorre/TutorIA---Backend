@@ -55,7 +55,6 @@ const uploadPDF = async () => {
         nombre: "sample",
         id: response.data.sourceId,
       };
-      pdfInfo.saveInfoPDF(info);
       res = response.data.sourceId;
     })
     .catch((error) => {
