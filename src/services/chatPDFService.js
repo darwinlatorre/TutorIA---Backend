@@ -12,7 +12,7 @@ const postMessageChatPDF = async (newConsult) => {
   };
 
   const data = {
-    sourceId: pdfInfo.findByName("sample"),
+    sourceId: pdfInfo.findByName(process.env.PDF),
     messages: [
       {
         role: "user",
@@ -36,10 +36,8 @@ const postMessageChatPDF = async (newConsult) => {
 
 const uploadPDF = async () => {
   const formData = new FormData();
-  formData.append(
-    "sample",
-    fs.createReadStream("src/database/pdfs/sample.pdf")
-  );
+  const pdfFilePath = `src/database/pdfs/${process.env.PDF}` + ".pdf";
+  formData.append(process.env.PDF, fs.createReadStream(pdfFilePath));
 
   const options = {
     headers: {
@@ -52,7 +50,7 @@ const uploadPDF = async () => {
     .post("https://api.chatpdf.com/v1/sources/add-file", formData, options)
     .then((response) => {
       const info = {
-        nombre: "sample",
+        nombre: process.env.PDF,
         id: response.data.sourceId,
       };
       pdfInfo.saveInfoPDF(info);

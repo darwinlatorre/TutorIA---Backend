@@ -3,18 +3,17 @@ const chatPDFService = require("../services/chatPDFService");
 const postMessageChatPDF = async (req, res) => {
   const { body } = req;
 
-  if (!body.id || !body.message || !body.widget) {
+  if (!body.message || !body.widget) {
     return res.status(400).send({
       status: "FAILED",
       data: {
         error:
-          "One of the following keys is missing or is empty in the request body: 'id', 'message', 'widget'",
+          "One of the following keys is missing or is empty in the request body: 'message', 'widget'",
       },
     });
   }
 
   const newConsult = {
-    id: body.id,
     message: body.message,
     widget: body.widget,
   };
