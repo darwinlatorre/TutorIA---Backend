@@ -1,6 +1,6 @@
 # TutorIA
 
-An API that use ChatPDF to store and consult all your documents.
+An API that use ChatPDF to store and consult all your documents using Radisys technologies.
 
 ## Tabla de Contenidos
 
